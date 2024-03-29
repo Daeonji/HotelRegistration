@@ -1,0 +1,64 @@
+/* CSS for form container */
+.form-container {
+    width: 50%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* CSS for form elements */
+.form-container form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* CSS for first name and last name inputs */
+.form-container form #firstName,
+.form-container form #City,
+.form-container form #state,
+.form-container form #zip,
+.form-container form #country,
+.form-container form #rooms,
+.form-container form #lastName {
+    width: calc(50% - 5px); /* Adjusted width for inputs to fit side by side */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure the padding is included in the element's total width */
+    display: inline-block; /* Display inputs inline */
+}
+
+/* Remove margin from the last input to prevent extra space */
+.form-container form #lastName {
+    margin-right: 0;
+}
+
+.form-container form input[type="email"],
+.form-container form input[type="phone"],
+.form-container form input[type="address"],
+.form-container form input[type="date"],
+.form-container form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure the padding is included in the element's total width */
+}
+
+.form-container form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

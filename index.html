@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Whispering Pines Retreat</title>
+<link rel="icon" type="image/x-icon" href="logo.jpg">
+<link rel="stylesheet" href = "style.css">
+<script>
+    function submitForm() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            var checkin = document.getElementById("checkin").value;
+            var checkout = document.getElementById("checkout").value;
+            var room = document.getElementById("rooms").value;
+
+            if(room === "One Bedroom")
+            {
+                var roomNum = Math.floor(Math.random() * 100) + 100;
+            }
+            if(room === "Two Bedrooms")
+            {
+                var roomNum = Math.floor(Math.random() * 100) + 200;
+            }
+            if(room === "Three Bedrooms")
+            {
+                var roomNum = Math.floor(Math.random() * 100) + 300;
+            }
+            var receiptMessage = "<img src='logo.jpg' alt='Hotel Logo' style='height: 60px;'>" +
+                                 "<h2><u>Hotel Receipt</u></h2>" +
+                                 "<p>Thank you for your submission, " + firstName + " " + lastName + "!</p>" +
+                                 "<p>Your room number is: <b> " + roomNum + " </b> </p>" +
+                                 "<p>Your email: " + email + "</p>" +
+                                 "<p>Your Check-In Date: " + checkin + "</p>" +
+                                 "<p>Your Check-Out Date: " + checkout + "</p>" +
+                                 "<p>Your message: " + message + "</p>" + 
+                                 "<h4>Thank you for choosing The Whispering Pines Retreat for your stay. Please show up at 10:00 AM on " + "<u>" + checkin + "</u>"+ " to collect your keys at the front desk. Should you require any assistance during your time with us, please don't hesitate to contact our front desk at (555) 123-4567 or email us at <a href=\"mailto:info@whisperingpinesretreat.com\">info@whisperingpinesretreat.com</a>. Check-out time is at 10:00 AM on " + "<u>" + checkout + "</u>" + " . Enjoy our amenities, and have a wonderful stay! We value your feedback, please share your experience with us by filling out a survey, leaving a review online, or contacting our front desk. We hope you have a pleasant and memorable stay at The Whispering Pines Retreat. </h4>";
+
+            document.getElementById("form-container").innerHTML = receiptMessage;
+            window.scrollTo(0, document.body.scrollHeight);
+            return false;
+        }
+</script>
+<style>
+    .form-container img {
+        height: 60px;
+        vertical-align: middle;
+    }
+
+    .form-container h2 {
+        display: inline-block; 
+        vertical-align: middle; 
+    }
+</style>
+</head>
+<body>
+    <div class = "header" style="text-align: center;">
+        <h1 style="padding-top: 15px;"><i>Whispering Pines Retreat</i></h1>
+        <h3><u>Where tranquility meets luxury, and every stay is a story waiting to be told.</u></h3>
+        <hr/>
+    </div>
+    <div id="form-container" class="form-container">
+        <img src="logo.jpg" style="height: 60px;">
+        <h2><u>Guest Registration Form</u></h2>
+        <form onsubmit="return submitForm()">
+            <label for="name">Guest Name:</label>
+            <input type="text" id="firstName" name="Fname" placeholder="First" required>
+            <input type="text" id="lastName" name="Lname" placeholder="Last" required>
+            <label for = "number">Guest Phone Number:</label>
+            <input type = "phone" id = "phone" placeholder="###-###-####" required>
+            <label for="email">Guest Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <label for = "address">Guest Address:</label>
+            <input type = "address" id = "address" placeholder="Street Address" required>
+            <input type = "address" id = "address2" placeholder="Street Address Line 2">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="state" placeholder="State">
+            <input type="text" id="zip" placeholder="Postal / Zip Code">
+            <input type="text" id="country" placeholder="Country">
+            <label for = "room">Bedroom Type:</label>
+            <select id = "rooms">
+                <option value="One Bedroom">One Bedroom</option>
+                <option value="Two Bedrooms">Two Bedroom</option>
+                <option value="Three Bedrooms">Three Bedroom</option>
+            </select>
+            <label for = "checkinDate">Check-In Date:</label>
+            <input type="date" id="checkin" required>
+            <label for = "checkoutDate">Check-Out Date:</label>
+            <input type="date" id="checkout" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html> 
